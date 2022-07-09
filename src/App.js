@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [frig, setFrig] = useState("");
+
+  const onClick = () => {
+    const frig = "ligma";
+    setFrig(frig);
+  };
+
+  const onClickAgain = () => {
+    console.log(frig);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={onClick}>clickme</button>
+      <button onClick={() => onClickAgain()}>again</button>
+      <div>{frig}</div>
     </div>
   );
 }
